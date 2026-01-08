@@ -24,8 +24,14 @@ const Home: React.FC = () => {
 
         <h3>USUARIO</h3>
 
-        <IonButton expand="block">Reservar</IonButton>
-        <IonButton expand="block">Ver solicitudes</IonButton>
+        <IonButton onClick={() => history.push('/reservas')}>
+        Reserva
+        </IonButton>
+
+        <IonButton routerLink="/mis-solicitudes" expand="block">
+        Ver mis solicitudes
+        </IonButton>
+
 
         <IonButton expand="block" color="danger" onClick={salir}>
           Salir
