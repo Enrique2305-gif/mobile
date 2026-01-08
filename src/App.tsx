@@ -20,6 +20,11 @@ import { IonReactRouter } from '@ionic/react-router';
 
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Reservas from './pages/Reservas';
+import MisSolicitudes from './pages/MisSolicitudes';
+import Calendario from './pages/Calendario';
+
+
 
 setupIonicReact();
 
@@ -42,6 +47,20 @@ const App: React.FC = () => (
         <Route exact path="/">
           <Redirect to="/login" />
         </Route>
+
+        <Route exact path="/reservas">
+        <Reservas />
+        </Route>
+
+        <Route exact path="/mis-solicitudes">
+        <MisSolicitudes />
+        </Route>
+
+        <Route exact path="/calendario">
+        <Calendario />
+         </Route>
+
+
 
       </IonRouterOutlet>
     </IonReactRouter>
