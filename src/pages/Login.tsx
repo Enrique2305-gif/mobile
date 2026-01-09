@@ -48,7 +48,7 @@ const Login: React.FC = () => {
       <div className="login-options">
         <IonCheckbox />
         <span>Recordarme</span>
-        <a href="#">¿Aún no tienes una cuenta?</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); history.push('/register'); }}>¿Aún no tienes una cuenta?</a>
       </div>
 
       <IonButton

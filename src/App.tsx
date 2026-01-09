@@ -23,6 +23,7 @@ import Home from './pages/Home';
 import Reservas from './pages/Reservas';
 import MisSolicitudes from './pages/MisSolicitudes';
 import Calendario from './pages/Calendario';
+import Register from './pages/Register';
 
 
 
@@ -41,6 +42,11 @@ const App: React.FC = () => (
         {/* HOME */}
         <Route exact path="/home">
           <Home />
+        </Route>
+
+        {/* REGISTER */}
+        <Route exact path="/register">
+          <Register />
         </Route>
 
         {/* REDIRECCIÓN INICIAL */}
