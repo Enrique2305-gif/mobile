@@ -1,0 +1,97 @@
+/* Header */
+.home-toolbar {
+  --background: #24356b;
+  --color: white;
+}
+
+/* Iconos del header */
+.home-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: white;
+}
+
+/* Container principal */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding-bottom: 0;
+}
+
+/* Logo */
+.home-logo {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.home-logo h1 {
+  font-family: serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #333;
+  margin: 0;
+}
+
+/* Bienvenida */
+.home-welcome {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.home-welcome h2 {
+  color: #24356b;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+/* Avatar */
+.home-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #333;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-avatar ion-icon {
+  font-size: 300px;
+  color: #333;
+}
+
+.home-welcome h3 {
+  letter-spacing: 2px;
+  color: #24356b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Zona inferior */
+.home-actions {
+  background-color: #e0e0e0;
+  padding: 60px;
+  margin-top: auto;
+}
+
+.home-actions ion-button {
+  margin-bottom: 30px;
+  --background: #24356b;
+  --border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Botón salir */
+.home-actions ion-button[color="danger"] {
+  --background: transparent;
+  --color: #d32f2f;
+  --border-color: #d32f2f;
+  --border-width: 2px;
+}
