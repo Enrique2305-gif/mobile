@@ -1,0 +1,28 @@
+.noti-count {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.noti-card {
+  background: #eef4ff;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.noti-user {
+  color: #2b4eff;
+  font-weight: bold;
+}
+
+.aprobada {
+  color: #333;
+}
+
+.rechazada {
+  color: red;
+}
+
+.noti-card small {
+  color: #777;
+}

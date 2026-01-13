@@ -29,6 +29,8 @@ import SolicitarReservaPaso2 from './pages/SolicitarReservaPaso2';
 import SolicitarReservaPaso3 from './pages/SolicitarReservaPaso3';
 import EditarSolicitud from './pages/EditarSolicitud';
 import DetalleReserva from './pages/DetalleReserva';
+import Notificaciones from './pages/Notificaciones';
+
 
 
 setupIonicReact();
@@ -82,6 +84,7 @@ const App: React.FC = () => (
 
         <Route exact path="/mis-solicitudes/:id" component={DetalleReserva} />
 
+        <Route exact path="/notificaciones" component={Notificaciones} />
 
         <Route exact path="/mis-solicitudes">
         <MisSolicitudes />

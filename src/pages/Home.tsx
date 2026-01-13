@@ -74,7 +74,11 @@ const Home: React.FC = () => {
         <IonToolbar className="home-toolbar">
           <IonTitle>Sistema de Reservas</IonTitle>
           <IonButtons slot="end">
-            <IonIcon icon={notificationsOutline} className="home-icon" />
+            <IonIcon
+              icon={notificationsOutline}
+              className="home-icon"
+              onClick={() => history.push('/notificaciones')}
+            />
             <IonMenuButton />
           </IonButtons>
         </IonToolbar>

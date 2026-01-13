@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
+import { notificationsOutline } from 'ionicons/icons';
 
 import {
   IonAlert,
@@ -15,6 +16,7 @@ import {
   IonLabel,
   IonGrid,
   IonRow,
+  IonMenuButton,
   IonCol,
   IonButton,
   IonIcon
@@ -66,13 +68,21 @@ const MisSolicitudes: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
+        <IonToolbar className="home-toolbar">
           <IonButtons slot="start">
             <IonBackButton defaultHref="/home" />
-          </IonButtons>
-          <IonTitle>Sistema de Reservas</IonTitle>
+            </IonButtons>
+        <IonTitle>Sistema de Reservas</IonTitle>
+        <IonButtons slot="end">
+        <IonIcon
+           icon={notificationsOutline}
+            className="home-icon"
+            onClick={() => history.push('/notificaciones')}
+          />
+           <IonMenuButton />
+         </IonButtons>
         </IonToolbar>
-      </IonHeader>
+    </IonHeader>
 
       <IonContent className="ion-padding">
 
