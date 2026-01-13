@@ -19,6 +19,8 @@ import {
   IonSelectOption
 } from '@ionic/react';
 
+import { useHistory } from 'react-router';
+
 import {
   calendarOutline,
   chevronDownOutline,
@@ -31,6 +33,8 @@ interface Disponible {
 }
 
 const Calendario: React.FC = () => {
+  const history = useHistory();
+
   const [showModal, setShowModal] = useState(false);
   const [disponibles, setDisponibles] = useState<Disponible[]>([]);
 
@@ -58,6 +62,18 @@ const Calendario: React.FC = () => {
     return disponibles.some(
       d => d.dia === dia && d.hora === hora
     );
+  };
+
+  // 👉 NAVEGA A SOLICITAR RESERVA
+  const irASolicitud = (dia: number, hora: string) => {
+    history.push('/solicitar-reserva', {
+      recurso: 'Aula',
+      ubicacion: 'A103',
+      capacidad: 15,
+      fecha: dia === 1 ? '11/04/2025' : '12/04/2025',
+      inicio: hora,
+      fin: '10:30'
+    });
   };
 
   return (
@@ -106,25 +122,29 @@ const Calendario: React.FC = () => {
                 {hora}
               </IonCol>
 
-              {dias.map(dia => (
-                <IonCol
-                  key={dia.id}
-                  style={{
-                    border: '1px solid #eee',
-                    background: esDisponible(dia.id, hora)
-                      ? '#35c14a'
-                      : 'transparent',
-                    color: esDisponible(dia.id, hora)
-                      ? 'white'
-                      : 'transparent',
-                    textAlign: 'center',
-                    fontSize: 12,
-                    fontWeight: 'bold'
-                  }}
-                >
-                  {esDisponible(dia.id, hora) && 'Disponible'}
-                </IonCol>
-              ))}
+              {dias.map(dia => {
+                const disponible = esDisponible(dia.id, hora);
+
+                return (
+                  <IonCol
+                    key={dia.id}
+                    onClick={() =>
+                      disponible && irASolicitud(dia.id, hora)
+                    }
+                    style={{
+                      border: '1px solid #eee',
+                      background: disponible ? '#35c14a' : 'transparent',
+                      color: disponible ? 'white' : 'transparent',
+                      textAlign: 'center',
+                      fontSize: 12,
+                      fontWeight: 'bold',
+                      cursor: disponible ? 'pointer' : 'default'
+                    }}
+                  >
+                    {disponible && 'Disponible'}
+                  </IonCol>
+                );
+              })}
             </IonRow>
           ))}
         </IonGrid>
