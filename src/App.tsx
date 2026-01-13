@@ -27,6 +27,8 @@ import Register from './pages/Register';
 import SolicitarReserva  from './pages/SolicitarReserva';
 import SolicitarReservaPaso2 from './pages/SolicitarReservaPaso2';
 import SolicitarReservaPaso3 from './pages/SolicitarReservaPaso3';
+import EditarSolicitud from './pages/EditarSolicitud';
+import DetalleReserva from './pages/DetalleReserva';
 
 
 setupIonicReact();
@@ -70,8 +72,15 @@ const App: React.FC = () => (
         path="/solicitar-reserva/paso3"
         component={SolicitarReservaPaso3}
         exact
-      />
+         />
 
+         <Route
+          path="/mis-solicitudes/:id/editar"
+          component={EditarSolicitud}
+          exact
+        />
+
+        <Route exact path="/mis-solicitudes/:id" component={DetalleReserva} />
 
 
         <Route exact path="/mis-solicitudes">

@@ -17,7 +17,6 @@ import {
   IonIcon
 } from '@ionic/react';
 
-import { checkmarkOutline } from 'ionicons/icons';
 
 import {
   documentTextOutline,
