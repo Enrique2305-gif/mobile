@@ -85,6 +85,7 @@ const App: React.FC = () => (
         <Route exact path="/mis-solicitudes/:id" component={DetalleReserva} />
 
         <Route exact path="/notificaciones" component={Notificaciones} />
+        <Route exact path="/detalle-reserva" component={DetalleReserva} />
 
         <Route exact path="/mis-solicitudes">
         <MisSolicitudes />

@@ -28,6 +28,8 @@ import {
   trash
 } from 'ionicons/icons';
 
+import './MisSolicitudes.css';
+
 type Estado = 'pendiente' | 'aprobada' | 'rechazada';
 
 interface Reserva {
@@ -98,15 +100,15 @@ const MisSolicitudes: React.FC = () => {
           onIonChange={e => setSegment(e.detail.value as Estado)}
         >
           <IonSegmentButton value="pendiente">
-            <IonLabel color="warning">Pendientes</IonLabel>
+            <IonLabel color="warning" style={{fontSize: '13px'}}>Pendientes</IonLabel>
           </IonSegmentButton>
 
           <IonSegmentButton value="aprobada">
-            <IonLabel color="success">Aprobadas</IonLabel>
+            <IonLabel color="success" style={{fontSize: '13px'}}>Aprobadas</IonLabel>
           </IonSegmentButton>
 
           <IonSegmentButton value="rechazada">
-            <IonLabel color="danger">Rechazadas</IonLabel>
+            <IonLabel color="danger" style={{fontSize: '13px'}}>Rechazadas</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
@@ -132,7 +134,7 @@ const MisSolicitudes: React.FC = () => {
               <IonCol size="3">{reserva.fecha}</IonCol>
               <IonCol size="2">{reserva.hora}</IonCol>
               <IonCol size="2">{reserva.lugar}</IonCol>
-              <IonCol size="3">
+              <IonCol size="3" className="acciones">
                 <IonButton
                   fill="clear"
                   size="small"

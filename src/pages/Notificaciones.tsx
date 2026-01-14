@@ -7,6 +7,8 @@ import {
   IonBackButton,
   IonContent
 } from '@ionic/react';
+import { useHistory } from 'react-router';
+
 
 import './Notificaciones.css';
 
@@ -19,6 +21,7 @@ interface Notificacion {
 }
 
 const Notificaciones: React.FC = () => {
+  const history = useHistory();
 
   const notificaciones: Notificacion[] = [
     {
@@ -44,6 +47,16 @@ const Notificaciones: React.FC = () => {
     }
   ];
 
+  const irADetalle = (notificacion: Notificacion) => {
+  history.push('/detalle-reserva', {
+    usuario: notificacion.usuario,
+    mensaje: notificacion.mensaje,
+    estado: notificacion.estado,
+    tiempo: notificacion.tiempo
+  });
+};
+
+
   return (
     <IonPage>
       <IonHeader>
@@ -63,8 +76,12 @@ const Notificaciones: React.FC = () => {
         </p>
 
         {notificaciones.map(n => (
-          <div key={n.id} className="noti-card">
-
+          <div
+            key={n.id}
+            className="noti-card"
+            onClick={() => irADetalle(n)}
+            style={{ cursor: 'pointer' }}
+          >
             <p>
               <strong className="noti-user">{n.usuario}</strong>{' '}
               <span className={n.estado === 'rechazada' ? 'rechazada' : 'aprobada'}>

@@ -19,25 +19,26 @@ const DetalleReserva: React.FC = () => {
   const history = useHistory();
   const location = useLocation<any>();
   const reserva = location.state;
+  //const { usuario, mensaje, estado, tiempo } = location.state as any;
 
-  if (!reserva) return null;
+ if (!reserva) {
+  return (
+    <IonPage>
+      <IonContent className="ion-padding">
+        <p>No hay información de la reserva.</p>
+      </IonContent>
+    </IonPage>
+  );
+}
 
   return (
     <IonPage>
       <IonHeader>
               <IonToolbar className="home-toolbar">
                 <IonButtons slot="start">
-                  <IonBackButton defaultHref="/mis-solicitudes" />
+                  <IonBackButton defaultHref="/notificaciones" />
                   </IonButtons>
               <IonTitle>Información de la Reserva</IonTitle>
-              <IonButtons slot="end">
-              <IonIcon
-                 icon={notificationsOutline}
-                  className="home-icon"
-                  onClick={() => history.push('/notificaciones')}
-                />
-                 <IonMenuButton />
-               </IonButtons>
               </IonToolbar>
           </IonHeader>     
 

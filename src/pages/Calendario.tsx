@@ -47,8 +47,8 @@ const Calendario: React.FC = () => {
   ];
 
   const dias = [
-    { id: 1, nombre: 'DO', fecha: '21' },
-    { id: 2, nombre: 'LU', fecha: '22' }
+    { id: 1, nombre: 'LU', fecha: '21' },
+    { id: 2, nombre: 'MA', fecha: '22' }
   ];
 
   // SIMULA FILTRADO
