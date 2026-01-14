@@ -48,8 +48,9 @@ const SolicitarReservaPaso2: React.FC = () => {
               </IonToolbar>
           </IonHeader>
 
-      <IonContent className="ion-padding">
-
+      <IonContent className="ion-padding"
+        style={{ '--padding-top': '80px' }}
+      >
         {/* PASOS */}
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
           <strong>Paso 2 de 3</strong>

@@ -9,7 +9,8 @@ import {
   IonSegment,
   IonSegmentButton,
   IonToolbar,
-  IonTitle
+  IonTitle, 
+  IonHeader
 } from '@ionic/react';
 import { useHistory } from 'react-router';
 import { registerUser } from '../firebase';
@@ -40,39 +41,62 @@ const Register: React.FC = () => {
   };
 
   return (
-    <IonPage>
-      <IonContent fullscreen>
-        <IonToolbar>
-          <IonTitle>{mode === 'login' ? 'Iniciar sesión' : 'Registrarse'}</IonTitle>
-        </IonToolbar>
+  <IonPage>
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle>
+          {mode === 'login' ? 'Iniciar sesión' : 'Registrarse'}
+        </IonTitle>
+      </IonToolbar>
+    </IonHeader>
 
-        <div style={{ padding: 16 }}>
-          <IonSegment value={mode} onIonChange={(e) => setMode(e.detail.value as any)}>
-            <IonSegmentButton value="login">Iniciar sesión</IonSegmentButton>
-            <IonSegmentButton value="register">Registrarse</IonSegmentButton>
-          </IonSegment>
+    <IonContent className="ion-padding">
+      <IonSegment
+        value={mode}
+        onIonChange={(e) => setMode(e.detail.value as any)}
+      >
+        <IonSegmentButton value="login">
+          Iniciar sesión
+        </IonSegmentButton>
+        <IonSegmentButton value="register">
+          Registrarse
+        </IonSegmentButton>
+      </IonSegment>
 
-          <IonItem>
-            <IonLabel position="stacked">Correo</IonLabel>
-            <IonInput value={email} onIonChange={(e) => setEmail(e.detail.value!)} />
-          </IonItem>
+      <IonItem>
+        <IonLabel position="stacked">Correo</IonLabel>
+        <IonInput
+          value={email}
+          onIonChange={(e) => setEmail(e.detail.value!)}
+        />
+      </IonItem>
 
-          <IonItem>
-            <IonLabel position="stacked">Contraseña</IonLabel>
-            <IonInput type="password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} />
-          </IonItem>
+      <IonItem>
+        <IonLabel position="stacked">Contraseña</IonLabel>
+        <IonInput
+          type="password"
+          value={password}
+          onIonChange={(e) => setPassword(e.detail.value!)}
+        />
+      </IonItem>
 
-          {mode === 'login' ? (
-            <IonButton expand="block" onClick={handleLogin}>INICIAR SESIÓN</IonButton>
-          ) : (
-            <IonButton expand="block" onClick={handleRegister} disabled={loading}>
-              {loading ? 'Creando...' : 'REGISTRARSE'}
-            </IonButton>
-          )}
-        </div>
-      </IonContent>
-    </IonPage>
-  );
+      {mode === 'login' ? (
+        <IonButton expand="block" onClick={handleLogin}>
+          INICIAR SESIÓN
+        </IonButton>
+      ) : (
+        <IonButton
+          expand="block"
+          onClick={handleRegister}
+          disabled={loading}
+        >
+          {loading ? 'Creando...' : 'REGISTRARSE'}
+        </IonButton>
+      )}
+    </IonContent>
+  </IonPage>
+);
+
 };
 
 export default Register;

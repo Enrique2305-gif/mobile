@@ -15,7 +15,7 @@ import {
 } from '@ionic/react';
 import { notificationsOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router';
-
+import './Home.css';
 
 const Reservas: React.FC = () => {
   const history = useHistory();
@@ -38,33 +38,35 @@ const Reservas: React.FC = () => {
               </IonToolbar>
           </IonHeader>
 
-      <IonContent className="ion-padding">
+      <IonContent className="ion-padding"
+        style={{ '--padding-top': '80px' }}
+      >
 
         <IonCard routerLink="/calendario">
           <IonImg src="https://www.espol.edu.ec/sites/default/files/clase1.jpg" />
           <IonCardHeader>
-            <IonCardTitle>Aulas</IonCardTitle>
+            <IonCardTitle className="card-title-center">Aulas</IonCardTitle>
           </IonCardHeader>
         </IonCard>
 
         <IonCard routerLink="/calendario">
           <IonImg src="https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/DPXDCWAE4RHZ5KHI53FWTGL7IE.jpg" />
           <IonCardHeader>
-            <IonCardTitle>Espacios deportivos</IonCardTitle>
+            <IonCardTitle className="card-title-center">Espacios deportivos</IonCardTitle>
           </IonCardHeader>
         </IonCard>
 
         <IonCard routerLink="/calendario">
           <IonImg src="https://www.espol.edu.ec/sites/default/files/NOTA%20TRABAJADORES%20ESPOL%206.jpg" />
           <IonCardHeader>
-            <IonCardTitle>Auditorios</IonCardTitle>
+            <IonCardTitle className="card-title-center">Auditorios</IonCardTitle>
           </IonCardHeader>
         </IonCard>
 
         <IonCard routerLink="/calendario">
           <IonImg src="https://www.fcnm.espol.edu.ec/sites/default/files/2023-09/FCNM%20Sistemas03.webp" />
           <IonCardHeader>
-            <IonCardTitle>Laboratorios</IonCardTitle>
+            <IonCardTitle className="card-title-center">Laboratorios</IonCardTitle>
           </IonCardHeader>
         </IonCard>
 

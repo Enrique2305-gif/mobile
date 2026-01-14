@@ -62,8 +62,9 @@ const EditarSolicitud: React.FC = () => {
               </IonToolbar>
           </IonHeader>
 
-      <IonContent className="ion-padding">
-
+      <IonContent className="ion-padding"
+        style={{ '--padding-top': '80px' }}
+      >
         <div style={grid}>
 
           <CampoInput

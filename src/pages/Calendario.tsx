@@ -98,7 +98,9 @@ const Calendario: React.FC = () => {
               </IonToolbar>
           </IonHeader>      
 
-      <IonContent className="ion-padding">
+      <IonContent className="ion-padding"
+        style={{ '--padding-top': '80px' }}
+      >
 
         {/* FILTROS */}
         <IonButton
@@ -177,7 +179,7 @@ const Calendario: React.FC = () => {
 
             <IonItem>
               <IonLabel>Aula</IonLabel>
-              <IonSelect placeholder="Aula">
+              <IonSelect interface="action-sheet" placeholder="Aula">
                 <IonSelectOption value="aula1">Aula 1</IonSelectOption>
                 <IonSelectOption value="aula2">Aula 2</IonSelectOption>
               </IonSelect>
@@ -185,7 +187,7 @@ const Calendario: React.FC = () => {
 
             <IonItem>
               <IonLabel>Capacidad</IonLabel>
-              <IonSelect placeholder="Capacidad">
+              <IonSelect interface="action-sheet" placeholder="Capacidad">
                 <IonSelectOption value="20">20</IonSelectOption>
                 <IonSelectOption value="40">40</IonSelectOption>
               </IonSelect>
@@ -193,7 +195,7 @@ const Calendario: React.FC = () => {
 
             <IonItem>
               <IonLabel>Unidades</IonLabel>
-              <IonSelect placeholder="Unidades">
+              <IonSelect interface="action-sheet" placeholder="Unidades">
                 <IonSelectOption value="fiec">FIEC</IonSelectOption>
                 <IonSelectOption value="fcnm">FCNM</IonSelectOption>
               </IonSelect>
@@ -201,7 +203,7 @@ const Calendario: React.FC = () => {
 
             <IonItem>
               <IonLabel>Bloque</IonLabel>
-              <IonSelect placeholder="Bloque">
+              <IonSelect interface="action-sheet" placeholder="Bloque">
                 <IonSelectOption value="a">A</IonSelectOption>
                 <IonSelectOption value="b">B</IonSelectOption>
               </IonSelect>
@@ -209,7 +211,7 @@ const Calendario: React.FC = () => {
 
             <IonItem>
               <IonLabel>Ubicación</IonLabel>
-              <IonSelect placeholder="Ubicación">
+              <IonSelect interface="action-sheet" placeholder="Ubicación">
                 <IonSelectOption value="campus">Campus</IonSelectOption>
               </IonSelect>
             </IonItem>
