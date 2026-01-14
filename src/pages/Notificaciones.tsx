@@ -47,8 +47,8 @@ const Notificaciones: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
+        <IonToolbar className="home-toolbar">
+            <IonButtons slot="start">
             <IonBackButton defaultHref="/home" />
           </IonButtons>
           <IonTitle>Notificaciones</IonTitle>

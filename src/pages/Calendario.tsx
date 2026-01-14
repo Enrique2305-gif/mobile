@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { notificationsOutline } from 'ionicons/icons';
+
 import {
   IonPage,
   IonHeader,
@@ -15,6 +17,7 @@ import {
   IonModal,
   IonItem,
   IonLabel,
+  IonMenuButton,
   IonSelect,
   IonSelectOption
 } from '@ionic/react';
@@ -79,13 +82,21 @@ const Calendario: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/reservas" />
-          </IonButtons>
-          <IonTitle>Calendario</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+              <IonToolbar className="home-toolbar">
+                <IonButtons slot="start">
+                  <IonBackButton defaultHref="/reservas" />
+                  </IonButtons>
+              <IonTitle>Calendario</IonTitle>
+              <IonButtons slot="end">
+              <IonIcon
+                 icon={notificationsOutline}
+                  className="home-icon"
+                  onClick={() => history.push('/notificaciones')}
+                />
+                 <IonMenuButton />
+               </IonButtons>
+              </IonToolbar>
+          </IonHeader>      
 
       <IonContent className="ion-padding">
 

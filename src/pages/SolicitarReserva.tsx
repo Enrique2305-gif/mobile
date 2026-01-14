@@ -6,34 +6,46 @@ import {
   IonButtons,
   IonBackButton,
   IonContent,
+  IonMenuButton,
   IonButton,
   IonCard,
   IonCardContent,
   IonIcon
 } from '@ionic/react';
 
-import { useLocation } from 'react-router';
+import { useLocation, useHistory } from 'react-router';
+
 import {
   businessOutline,
   locationOutline,
   peopleOutline,
+  notificationsOutline,
   calendarOutline
 } from 'ionicons/icons';
 
 const SolicitarReserva: React.FC = () => {
+  const history = useHistory();
   const location = useLocation<any>();
   const datos = location.state;
 
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/calendario" />
-          </IonButtons>
-          <IonTitle>Solicitar Reservas</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+              <IonToolbar className="home-toolbar">
+                <IonButtons slot="start">
+                  <IonBackButton defaultHref="/calendario" />
+                  </IonButtons>
+              <IonTitle>Solicitar Reservas</IonTitle>
+              <IonButtons slot="end">
+              <IonIcon
+                 icon={notificationsOutline}
+                  className="home-icon"
+                  onClick={() => history.push('/notificaciones')}
+                />
+                 <IonMenuButton />
+               </IonButtons>
+              </IonToolbar>
+          </IonHeader>
 
       <IonContent className="ion-padding">
 

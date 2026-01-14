@@ -9,20 +9,34 @@ import {
   IonCard,
   IonCardHeader,
   IonCardTitle,
-  IonImg
+  IonImg,
+  IonMenuButton,
+  IonIcon
 } from '@ionic/react';
+import { notificationsOutline } from 'ionicons/icons';
+import { useHistory } from 'react-router';
+
 
 const Reservas: React.FC = () => {
+  const history = useHistory();
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-            <IonButtons slot="start">
-            <IonBackButton defaultHref="/home" />
-            </IonButtons>
-            <IonTitle>Sistema de Reservas</IonTitle>
-        </IonToolbar>
-        </IonHeader>
+              <IonToolbar className="home-toolbar">
+                <IonButtons slot="start">
+                  <IonBackButton defaultHref="/home" />
+                  </IonButtons>
+              <IonTitle>Sistema de Reservas</IonTitle>
+              <IonButtons slot="end">
+              <IonIcon
+                 icon={notificationsOutline}
+                  className="home-icon"
+                  onClick={() => history.push('/notificaciones')}
+                />
+                 <IonMenuButton />
+               </IonButtons>
+              </IonToolbar>
+          </IonHeader>
 
       <IonContent className="ion-padding">
 

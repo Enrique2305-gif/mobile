@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 import {
   IonPage,
   IonHeader,
   IonToolbar,
   IonTitle,
+  IonMenuButton,
   IonButtons,
   IonBackButton,
   IonContent,
@@ -16,11 +18,12 @@ import {
   personOutline,
   documentTextOutline,
   mailOutline,
+  notificationsOutline,
   callOutline
 } from 'ionicons/icons';
 
 const SolicitarReservaPaso2: React.FC = () => {
-
+  const history = useHistory();
   const [solicitante, setSolicitante] = useState('');
   const [nombreReserva, setNombreReserva] = useState('');
   const [correo, setCorreo] = useState('');
@@ -29,13 +32,21 @@ const SolicitarReservaPaso2: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/solicitar-reserva" />
-          </IonButtons>
-          <IonTitle>Solicitar Reservas</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+              <IonToolbar className="home-toolbar">
+                <IonButtons slot="start">
+                  <IonBackButton defaultHref="/calendario" />
+                  </IonButtons>
+              <IonTitle>Solicitar Reservas</IonTitle>
+              <IonButtons slot="end">
+              <IonIcon
+                 icon={notificationsOutline}
+                  className="home-icon"
+                  onClick={() => history.push('/notificaciones')}
+                />
+                 <IonMenuButton />
+               </IonButtons>
+              </IonToolbar>
+          </IonHeader>
 
       <IonContent className="ion-padding">
 

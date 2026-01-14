@@ -9,6 +9,7 @@ import {
   IonTitle,
   IonButtons,
   IonBackButton,
+  IonMenuButton,
   IonContent,
   IonButton,
   IonSelect,
@@ -17,9 +18,11 @@ import {
   IonIcon
 } from '@ionic/react';
 
+import { useHistory } from 'react-router';
 
 import {
   documentTextOutline,
+  notificationsOutline,
   attachOutline
 } from 'ionicons/icons';
 
@@ -28,7 +31,7 @@ const enviarSolicitud = () => {
 };
 
 const SolicitarReservaPaso3: React.FC = () => {
-
+  const history = useHistory();
   const [ambito, setAmbito] = useState('');
   const [tipoEvento, setTipoEvento] = useState('');
   const [descripcion, setDescripcion] = useState('');
@@ -38,14 +41,21 @@ const SolicitarReservaPaso3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/solicitar-reserva/paso2" />
-          </IonButtons>
-          <IonTitle>Solicitar Reservas</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-
+              <IonToolbar className="home-toolbar">
+                <IonButtons slot="start">
+                  <IonBackButton defaultHref="/calendario" />
+                  </IonButtons>
+              <IonTitle>Solicitar Reservas</IonTitle>
+              <IonButtons slot="end">
+              <IonIcon
+                 icon={notificationsOutline}
+                  className="home-icon"
+                  onClick={() => history.push('/notificaciones')}
+                />
+                 <IonMenuButton />
+               </IonButtons>
+              </IonToolbar>
+          </IonHeader>
       <IonContent className="ion-padding">
 
         {/* PASOS */}

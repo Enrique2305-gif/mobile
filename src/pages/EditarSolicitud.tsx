@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { notificationsOutline } from 'ionicons/icons';
 import {
   IonPage,
   IonHeader,
@@ -9,6 +10,8 @@ import {
   IonContent,
   IonInput,
   IonTextarea,
+  IonIcon,
+  IonMenuButton,
   IonButton
 } from '@ionic/react';
 
@@ -43,13 +46,21 @@ const EditarSolicitud: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/mis-solicitudes" />
-          </IonButtons>
-          <IonTitle>Información</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+              <IonToolbar className="home-toolbar">
+                <IonButtons slot="start">
+                  <IonBackButton defaultHref="/mis-solicitudes" />
+                  </IonButtons>
+              <IonTitle>Información</IonTitle>
+              <IonButtons slot="end">
+              <IonIcon
+                 icon={notificationsOutline}
+                  className="home-icon"
+                  onClick={() => history.push('/notificaciones')}
+                />
+                 <IonMenuButton />
+               </IonButtons>
+              </IonToolbar>
+          </IonHeader>
 
       <IonContent className="ion-padding">
 

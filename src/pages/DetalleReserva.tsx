@@ -1,4 +1,7 @@
 import { useLocation } from 'react-router';
+import { notificationsOutline } from 'ionicons/icons';
+import { useHistory } from 'react-router';
+
 import {
   IonPage,
   IonHeader,
@@ -7,10 +10,13 @@ import {
   IonButtons,
   IonBackButton,
   IonContent,
+  IonIcon,
+  IonMenuButton,
   IonText
 } from '@ionic/react';
 
 const DetalleReserva: React.FC = () => {
+  const history = useHistory();
   const location = useLocation<any>();
   const reserva = location.state;
 
@@ -19,13 +25,21 @@ const DetalleReserva: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/mis-solicitudes" />
-          </IonButtons>
-          <IonTitle>Información de la Reserva</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+              <IonToolbar className="home-toolbar">
+                <IonButtons slot="start">
+                  <IonBackButton defaultHref="/mis-solicitudes" />
+                  </IonButtons>
+              <IonTitle>Información de la Reserva</IonTitle>
+              <IonButtons slot="end">
+              <IonIcon
+                 icon={notificationsOutline}
+                  className="home-icon"
+                  onClick={() => history.push('/notificaciones')}
+                />
+                 <IonMenuButton />
+               </IonButtons>
+              </IonToolbar>
+          </IonHeader>     
 
       <IonContent className="ion-padding">
 
